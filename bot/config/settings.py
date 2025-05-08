@@ -13,7 +13,6 @@ class BotSettings:
 @dataclass
 class VectorDBSettings:
     path: str = field(default_factory=lambda: os.getenv("VECTOR_DB_PATH"))
-    table_name: str = field(default_factory=lambda: os.getenv("TABLE_NAME"))
 
 
 @dataclass
@@ -35,7 +34,7 @@ class Settings:
 
     @classmethod
     def from_env(cls) -> "Settings":
-        # найдём .env где бы вы ни запускали скрипт
+        # найдём .env где бы ни запускался скрипт
         env_file = find_dotenv(raise_error_if_not_found=True)
         load_dotenv(env_file)
         return Settings()
