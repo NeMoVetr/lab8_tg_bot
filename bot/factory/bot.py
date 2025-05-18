@@ -16,7 +16,7 @@ def create_bot(settings: Settings):
         json_dumps=lambda obj, **kwargs: orjson.dumps(obj).decode('utf-8')
     )
     return Bot(
-        token="7803994317:AAEkP86gS3wgBrM5FfrPKwbTUlXWoE1kI1I",
+        token=Settings.bot.token,
         default=DefaultBotProperties(
             parse_mode=ParseMode.HTML
         ),
